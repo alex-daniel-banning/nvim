@@ -31,4 +31,15 @@ return require('packer').startup(function(use)
   use({'hrsh7th/nvim-cmp'})
   use({'hrsh7th/cmp-nvim-lsp'})
 
+  use {
+      'altermo/ultimate-autopair.nvim',
+      event={'InsertEnter','CmdlineEnter'},
+      branch='v0.6', --recommended as each new version will have breaking changes
+      config=function ()
+          require('ultimate-autopair').setup({
+              --Config goes here
+          })
+      end,
+  }
+
 end)

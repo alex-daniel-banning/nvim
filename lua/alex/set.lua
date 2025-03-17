@@ -23,6 +23,6 @@ vim.opt.signcolumn = "yes" --todo, not sure what this one does
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+--vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
