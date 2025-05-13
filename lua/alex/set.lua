@@ -18,7 +18,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true --todo, not sure what colors this affects
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 0
 vim.opt.signcolumn = "yes" --todo, not sure what this one does
 
 vim.opt.updatetime = 50

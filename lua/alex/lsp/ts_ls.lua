@@ -1,4 +1,5 @@
-require('lspconfig').clangd.setup{}
+require('lspconfig').ts_ls.setup({})
+require('lspconfig').eslint.setup({})
 
 -- See https://www.mitchellhanberg.com/modern-format-on-save-in-neovim/
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -14,9 +15,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 return {
-  cmd = { 'clangd' },
-  root_markers = { '.clangd', 'compile_commands.json' },
-  filetypes = { 'c', 'cpp', 'cxx', 'objc', 'objcpp', 'cuda', 'proto', 'h', 'hpp'},
+  cmd = { 'typescript-language-server' },
+  root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json' },
+  filetypes = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+    },
   capabilities = {
 	  offsetEncoding = { "utf-8", "utf-16" },
 	  textDocument = {

@@ -53,3 +53,14 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Makes the current file executable.
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})
+
+vim.keymap.set("n", "<leader>di", "<cmd> lua vim.diagnostic.open_float() <CR>")
+
+vim.keymap.set('n', '<leader>q', function()
+    for _, win in ipairs(vim.fn.getwininfo()) do
+        if win.quickfix == 1 then
+            vim.cmd('cclose')
+            return
+        end
+    end
+end, {desc = 'Close quickfix list if open'})
